@@ -42,7 +42,7 @@ function readFile (pathUrl, replaceCode, codeType) {
   try {
     sourceCode = fs.readFileSync(p, 'utf-8')
   } catch(e) {
-    console.log(pathUrl, e, '路径不存在！')
+    // console.log(pathUrl, e, '路径不存在！')
   }
   if (codeType === 'js') {
     sourceCode = transformES2015(sourceCode)
