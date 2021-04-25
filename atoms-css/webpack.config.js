@@ -110,7 +110,7 @@ module.exports = {
 
   devServer: {
     hot: true,
-    open: false,
+    open: true,
     openPage: `${pages[0]}.html`,
     before(app, server, compiler) {
       const watchFiles = ['.html'];

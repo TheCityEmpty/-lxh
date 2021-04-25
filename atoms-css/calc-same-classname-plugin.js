@@ -10,9 +10,9 @@ class CalcSameClassNamePlugin {
                     const sameClassNameArr = getCSSClassName(assets[filename].source())
                     let warning =''
                     if (sameClassNameArr.length) {
-                        warning = ` \n${filename}文件下重复类名如下：\n${sameClassNameArr.join('\n ')}
+                        warning = ` \n${filename}文件下重复类名如下：\n${sameClassNameArr.join('\n')}
                         `
-                        console.log(warning.red)
+                        throw new Error(warning.red)
                     }
                 }
             })
