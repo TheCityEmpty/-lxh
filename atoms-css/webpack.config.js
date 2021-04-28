@@ -113,7 +113,7 @@ module.exports = {
     open: true,
     openPage: `${pages[0]}.html`,
     before(app, server, compiler) {
-      const watchFiles = ['.html'];
+      const watchFiles = ['.html', '.less'];
 
       compiler.hooks.done.tap('done', () => {
         const changedFiles = Object.keys(compiler.watchFileSystem.watcher.mtimes);

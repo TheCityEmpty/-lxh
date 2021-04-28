@@ -1,0 +1,21 @@
+/**
+* grid layout
+*/
+.g {
+    display: grid;
+}
+.g-inline {
+    display: inline-grid;
+}
+
+// 列宽 和 行高
+// @sameNum: 2, 3, 4, 5, 6, 7, 8, 9, 10;
+
+// 分成相同份
+each(range(1, 9), {
+    .g-t-c-same-@{value} {
+        grid-template-columns: repeat(@value, 100% / @value);
+    }
+});
+
+@specialNum: 1, 2, 3, 4, 5, 6, 7, 8, 9;
