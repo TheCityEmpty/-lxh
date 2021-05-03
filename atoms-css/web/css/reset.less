@@ -34,6 +34,8 @@ td,
 section {
     padding: 0;
     margin: 0;
+    // 处理 ios 下在 webview 中滚动会出现卡顿
+    // -webkit-overflow-scrolling: touch;
 }
 
 html,
@@ -46,7 +48,6 @@ body {
 body {
     color: #313131;
     -webkit-overflow-scrolling: touch;
-    background-color: #fefefe !important;
 }
 
 h1,
@@ -91,6 +92,7 @@ input[type=submit],
 input[type=file],
 button {
     cursor: pointer;
+    // 处理 ios 下 input 有内阴影
     -webkit-appearance: none;
 }
 

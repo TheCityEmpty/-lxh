@@ -1,0 +1,18 @@
+@import url('./vars.less');
+
+
+each(range(@__colors__loop), .(@valueNum) {
+  @opacitySize: (@valueNum - 1) * @__colors_loop_step * 10;
+  @classNameSub: if(@opacitySize < 1, ~'', ~'-@{opacitySize}');
+  each(@__colors, {
+    .color-@{key}@{classNameSub} {
+      color: tint(@value, @opacitySize);
+    }
+  })
+});
+
+each(@absolute__color, {
+  .color-@{key} {
+    color: @value;
+  }
+})

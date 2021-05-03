@@ -1,0 +1,37 @@
+/**
+* 全局变量以 __ 为前缀，以区分局部变量
+*/
+
+// 循环的最大次数和最小次数
+@__minLoop: 1;
+@__maxLoop: 9;
+// 间隔的数值
+@__space: 2px;
+    
+
+// 对颜色集合中的颜色进行透明度处理次数 5 次 分别是 0%~80%透明度， 不需要的可以设置为0
+@__colors__loop: 5;
+// 对颜色集合进行遍历时的步数（跨度）
+@__colors_loop_step: 2;
+// 颜色集合
+@__colors: {
+    primary: #2d8cf0;
+    success: #19be6b;
+    warning: #ff9900;
+    error: #ed4014;
+    content: #515a6e;
+    title: #17233d;
+    disabled: #c5c8ce;
+}
+// 绝对颜色
+@absolute__color: {
+    w: #fff;
+    b: #000;
+    t: transparent;
+};
+@border__style: {
+    dotted: dotted;
+    dashed: dashed;
+    solid: solid;
+    double: double;
+}

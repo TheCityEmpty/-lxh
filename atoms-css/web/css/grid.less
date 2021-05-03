@@ -1,3 +1,4 @@
+@import url('./vars.less');
 /**
 * grid layout
 */
@@ -8,14 +9,121 @@
     display: inline-grid;
 }
 
-// 列宽 和 行高
-// @sameNum: 2, 3, 4, 5, 6, 7, 8, 9, 10;
-
-// 分成相同份
-each(range(1, 9), {
+// 列宽 和 行高 分成相同份
+each(range(@__minLoop, @__maxLoop), {
     .g-t-c-same-@{value} {
         grid-template-columns: repeat(@value, 100% / @value);
     }
+    .g-t-r-same-@{value} {
+        grid-template-rows: repeat(@value, 100% / @value);
+    }
 });
 
-@specialNum: 1, 2, 3, 4, 5, 6, 7, 8, 9;
+// 列宽 和 行高 分成不同的两份 [1, 9] [2, 8] [3, 7] [4, 6] [5, 5], [6, 4] [7, 3] [8, 2] [9, 1]
+each(range(@__minLoop, @__maxLoop), {
+    @calcPX: fr;
+    // less 中拼接字符串会出现空格， 一下两种方式都可解决此问题 ~  or  e
+    @calc: 10 - @value;
+    @calcRes: ~'@{calc}@{calcPX}';
+    @valueRes: e('@{value}@{calcPX}');
+    .g-t-c-@{value}-@{calc} {
+        grid-template-columns: @valueRes @calcRes;
+    }
+    .g-t-r-@{value}-@{calc} {
+        grid-template-rows: @valueRes @calcRes;
+    }
+});
+
+// 间隔
+each(range(@__minLoop, 20), {
+    @spaceCalc: @__space * @value;
+    .g-r-g-@{spaceCalc} {
+        grid-row-gap: @spaceCalc;
+    }
+    .g-c-g-@{spaceCalc} {
+        grid-column-gap: @spaceCalc;
+    }
+})
+
+// 排列方向 先行后列
+.g-af-r {
+    grid-auto-flow: row;
+}
+.g-af-c {
+    grid-auto-flow: column;
+}
+.g-af-rd {
+    grid-auto-flow: row dense;
+}
+.g-af-cd {
+    grid-auto-flow: column dense;
+}
+
+// 对齐方式
+.g-ji-s {
+    justify-items: start;
+}
+.g-ai-s {
+    align-items: start;
+}
+.g-ji-e {
+    justify-items: end;
+}
+.g-ai-e {
+    align-items: end;
+}
+.g-ji-c {
+    justify-items: center;
+}
+.g-ai-c {
+    align-items: center;
+}
+.g-ji-sh {
+    justify-items: stretch;
+}
+.g-ai-sh {
+    align-items: stretch;
+}
+
+.g-jc-s {
+    justify-content: start;
+}
+.g-jc-e {
+    justify-content: end;
+}
+.g-jc-c {
+    justify-content: center;
+}
+.g-jc-sh {
+    justify-content: stretch;
+}
+.g-jc-sa {
+    justify-content: space-around;
+}
+.g-jc-sb {
+    justify-content: space-between;
+}
+.g-jc-se {
+    justify-content: space-evenly;
+}
+.g-ac-s {
+    align-content: start;
+}
+.g-ac-e {
+    align-content: end;
+}
+.g-ac-c {
+    align-content: center;
+}
+.g-ac-sh {
+    align-content: stretch;
+}
+.g-ac-sa {
+    align-content: space-around;
+}
+.g-ac-sb {
+    align-content: space-between;
+}
+.g-ac-se {
+    align-content: space-evenly;
+}
