@@ -16,3 +16,85 @@ each(@absolute__color, {
     color: @value;
   }
 })
+
+// 背景处理
+each(@bg__color, {
+  .bg-@{key} {
+    background-color: @value;
+  }
+})
+.bg-r-nr{
+  background-repeat: no-repeat;
+}
+.bg-r-rx{
+  background-repeat: repeat-x;
+}
+.bg-r-ry{
+  background-repeat: repeat-y;
+}
+.bg-a-f {
+  background-attachment: fixed;
+}
+.bg-a-l {
+  background-attachment: local;
+}
+.bg-a-s {
+  background-attachment: scroll;
+}
+// 背景定位
+.bg-p-lt {
+  background-position: left top;
+}
+.bg-p-lc {
+  background-position: left center;
+}
+.bg-p-lb {
+  background-position: left bottom;
+}
+.bg-p-rt {
+  background-position: right top;
+}
+.bg-p-rc {
+  background-position: right center;
+}
+.bg-p-rb {
+  background-position: right bottom;
+}
+.bg-p-ct {
+  background-position: center top;
+}
+.bg-p-cc {
+  background-position: center center;
+}
+.bg-p-cr {
+  background-position: center right;
+}
+.bg-o-bb {
+  background-origin: border-box;
+}
+.bg-o-pb {
+  background-origin: padding-box;
+}
+.bg-o-cb {
+  background-origin: content-box;
+}
+// 背景大小
+.bg-s-cn {
+  background-size: contain;
+}
+.bg-s-cr {
+  background-size: cover;
+}
+.bg-s-full {
+  background-size: 100% 100%;
+}
+// 裁剪背景
+.bg-c-bb {
+  background-clip: border-box;
+}
+.bg-c-pb {
+  background-clip: padding-box;
+}
+.bg-c-cb {
+  background-clip: content-box;
+}

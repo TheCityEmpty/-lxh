@@ -1,0 +1,122 @@
+@import url('./vars.less');
+// 文本对齐
+.text-a-c {
+    text-align: center;
+}
+.text-a-r {
+    text-align: right;
+}
+.text-a-l {
+    text-align: left;
+}
+.text-a-j {
+    text-align: justify;
+}
+
+// 文本修饰
+each(@text__line__color, {
+    .text-dc-@{key} {
+      text-decoration-color: @value;
+    }
+})
+.text-dl-n {
+    text-decoration-line: none;
+}
+.text-dl-u {
+    text-decoration-line: underline;
+}
+.text-dl-o {
+    text-decoration-line: overline;
+}
+.text-dl-lt {
+    text-decoration-line: line-through;
+}
+each(@border__style, {
+    .text-ds-@{key} {
+      text-decoration-style: @value;
+    }
+})
+.text-i-half {
+    text-indent: 0.5em;
+}
+.text-i-1em {
+    text-indent: 1em;
+}
+.text-i-2em {
+    text-indent: 2em;
+}
+.text-t-u {
+    text-transform: uppercase;
+}
+.text-t-l {
+    text-transform: lowercase;
+}
+.text-t-c {
+    text-transform: capitalize;
+}
+.text-va-base {
+    vertical-align: baseline;
+}
+.text-va-sub {
+    vertical-align: sub;
+}
+.text-va-sup {
+    vertical-align: super;
+}
+.text-va-t {
+    vertical-align: top;
+}
+.text-va-b {
+    vertical-align: bottom;
+}
+.text-va-tt {
+    vertical-align: text-top;
+}
+.text-va-tb {
+    vertical-align: text-bottom;
+}
+.text-va-m {
+    vertical-align: middle;
+}
+.text-ws-n {
+    white-space: normal;
+}
+.text-ws-p {
+    white-space: pre;
+}
+.text-ws-nw {
+    white-space: nowrap;
+}
+.text-ws-pw {
+    white-space: pre-wrap;
+}
+.text-ws-pl {
+    white-space: pre-line;
+}
+
+each(@font__size, {
+    .f-s-@{value} {
+        font-size: @value;
+    }
+});
+
+.f-w-400 {
+    font-weight: 400;
+}
+.f-w-500 {
+    font-weight: 500;
+}
+.f-w-600 {
+    font-weight: bold;
+}
+
+each(@font__hover, {
+    .f-hover-@{key}:hover {
+        color: @value;
+    }
+});
+each(@font__active, {
+    .f-active-@{key}:active {
+        color: @value;
+    }
+});
