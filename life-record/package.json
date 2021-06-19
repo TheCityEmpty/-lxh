@@ -1,0 +1,25 @@
+{
+  "version": "0.0.0",
+  "scripts": {
+    "predev": "npm run autoRouter",
+    "dev": "vite --open --port 3002",
+    "build": "vite build",
+    "serve": "vite preview",
+    "autoRouter": "node ./script/plugins/vue-auto-router.js"
+  },
+  "dependencies": {
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.3",
+    "@vue/compiler-sfc": "^3.0.5",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-vue": "^7.11.1",
+    "less": "^4.1.1",
+    "prettier": "^2.3.1",
+    "vite": "^2.3.7"
+  }
+}
