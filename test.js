@@ -36,5 +36,5 @@ arr.forEach(className => {
   }
 })
 
-console.log('`````````````````')
+console.log('````````````````` vue create resolving-element')
 console.log(arr, [...new Set(sameArr)])

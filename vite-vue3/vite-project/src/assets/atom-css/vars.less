@@ -1,0 +1,65 @@
+/**
+* 全局变量以 __ 为前缀，以区分局部变量
+*/
+@reset__text__color: #181D38;
+// 循环的最大次数和最小次数
+@__minLoop: 1;
+@__maxLoop: 9;
+// 间隔的数值
+@__space: 4px;
+    
+
+// 对颜色集合中的颜色进行透明度处理次数 5 次 分别是 0%~80%透明度， 不需要的可以设置为0
+@__colors__loop: 5;
+// 对颜色集合进行遍历时的步数（跨度）
+@__colors_loop_step: 2;
+// 颜色集合
+@__colors: {
+    primary: #181D38;
+    content: #8A8A8A;
+    title: @reset__text__color;
+    solid: #fafafa;
+}
+// 绝对颜色
+@absolute__color: {
+    w: #fff;
+    b: #000;
+    t: transparent;
+};
+// 背景颜色
+@bg__color: {
+    primary: #181D38;
+    box: #F3F4F6;
+};
+@border__style: {
+    dotted: dotted;
+    dashed: dashed;
+    solid: solid;
+    double: double;
+}
+
+// 文本线颜色
+@text__line__color: {
+    // primary: #2d8cf0;
+    // success: #19be6b;
+    // warning: #ff9900;
+}
+
+// 文字大小
+@font__size: 24px, 28px, 32px, 36px, 50px;
+// 文字 链接样式
+@font__hover: {
+    // primary: #2d8cf0;
+    // success: #19be6b;
+    // warning: #ff9900;
+}
+@font__active: {
+    // primary: #2d8cf0;
+    // success: #19be6b;
+    // warning: #ff9900;
+}
+
+// 高度百分比， 包含 % 和 vh
+@h__size: 50, 100;
+// 宽度百分比， 包含 % 和 vw
+@w__size: 50, 100;

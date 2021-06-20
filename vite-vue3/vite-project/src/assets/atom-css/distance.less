@@ -1,0 +1,121 @@
+@import url('./vars.less');
+
+each(range(@__minLoop, @__maxLoop), {
+    @spaceCalc: @__space * @value;
+    .m-b-@{spaceCalc} {
+        margin-bottom: @spaceCalc;
+    }
+    .m-t-@{spaceCalc} {
+        margin-top: @spaceCalc;
+    }
+    .m-r-@{spaceCalc} {
+        margin-right: @spaceCalc;
+    }
+    .m-l-@{spaceCalc} {
+        margin-left: @spaceCalc;
+    }
+    .p-b-@{spaceCalc} {
+        padding-bottom: @spaceCalc;
+    }
+    .p-t-@{spaceCalc} {
+        padding-top: @spaceCalc;
+    }
+    .p-r-@{spaceCalc} {
+        padding-right: @spaceCalc;
+    }
+    .p-l-@{spaceCalc} {
+        padding-left: @spaceCalc;
+    }
+    .b-r-@{spaceCalc} {
+        border-radius: @spaceCalc;
+    }
+})
+.m-a {
+    margin: auto;
+}
+.m-a-align {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.m-a-justify {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// 定位和距离
+.p-s {
+    position: static;
+}
+.p-a {
+    position: absolute;
+}
+.p-r {
+    position: relative;
+}
+.p-sky {
+    position: sticky;
+}
+.p-f {
+    position: fixed;
+}
+
+each(range(@__minLoop, @__maxLoop), {
+    @readValue: @value - 1;
+    @posiClac: @readValue * 10%;
+    .top-@{readValue} {
+        top: @posiClac;
+    }
+    .bottom-@{readValue} {
+        bottom: @posiClac;
+    }
+    .left-@{readValue} {
+        left: @posiClac;
+    }
+    .right-@{readValue} {
+        right: @posiClac;
+    }
+});
+.t-a {
+    top: auto;
+}
+.b-a {
+    bottom: auto;
+}
+.l-a {
+    left: auto;
+}
+.r-a {
+    right: auto;
+}
+
+// 边框处理
+@bordermap: {
+    l: left;
+    r: right;
+    t: top;
+    b: bottom;
+};
+@borderWidth: 1;
+each(@bordermap, {
+    .b-@{key}-@{borderWidth} {
+        border-@{value}: 1px solid;
+    }
+})
+each(@__colors, {
+    .b-c-@{key} {
+        border-color: @value;
+    }
+})
+.b-no {
+    border: 0 none;
+}
+
+each(@border__style, {
+    .b-s-@{key} {
+        border-style: @value;
+    }
+})
+.o-no {
+    outline: 0 none;
+}
+

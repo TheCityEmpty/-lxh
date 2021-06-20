@@ -1,0 +1,131 @@
+/**
+* flex layout
+*/
+// 布局方式
+.f {
+  display: flex;
+}
+.f-inline {
+  display: inline-flex;
+}
+// 主轴方向
+.f-d-r {
+  flex-direction: row;
+}
+.f-d-rr {
+  flex-direction: row-reverse;
+}
+.f-d-c {
+  flex-direction: column;
+}
+.f-d-cr {
+  flex-direction: column-reverse;
+}
+// 换行
+.f-w-n {
+  flex-wrap: nowrap;
+}
+.f-w-w {
+  flex-wrap: wrap;
+}
+.f-w-wr {
+  flex-wrap: wrap-reverse;
+}
+// flex-flow todo
+// 主轴对齐方式
+.f-jc-fs {
+  justify-content: flex-start;
+}
+.f-jc-fe {
+  justify-content: flex-end;
+}
+.f-jc-c {
+  justify-content: center;
+}
+.f-jc-sb {
+  justify-content: space-between;
+}
+.f-jc-sa {
+  justify-content: space-around;
+}
+.f-jc-se {
+  justify-content: space-evenly;
+}
+// 交叉轴对齐方式
+.f-ai-fs {
+  align-items: flex-start;
+}
+.f-ai-fe {
+  align-items: flex-end;
+}
+.f-ai-c {
+  align-items: center;
+}
+.f-ai-b {
+  align-items: baseline;
+}
+.f-ai-s {
+  align-items: stretch;
+}
+// 多根轴线对齐方式
+.f-ac-fs {
+  align-content: flex-start;
+}
+.f-ac-fe {
+  align-content: flex-end;
+}
+.f-ac-c {
+  align-content: center;
+}
+.f-ac-sb {
+  align-content: space-between;
+}
+.f-ac-sa {
+  align-content: space-around;
+}
+.f-ac-s {
+  align-content: stretch;
+}
+.f-ac-se {
+  align-content: space-evenly;
+}
+// order 排列顺序 仅提供几个
+.f-o-start {
+  order: -1;
+}
+.f-o-end {
+  order: 1;
+}
+// 扩展属性 todo 有待思考
+.f-g-1 {
+  flex-grow: 1;
+}
+.f-s-0 {
+  flex-shrink: 0;
+}
+// self 垂直对齐方式
+.f-as-fs {
+  align-self: flex-start;
+}
+.f-as-fe {
+  align-self: flex-end;
+}
+.f-as-c {
+  align-self: center;
+}
+.f-as-b {
+  align-self: baseline;
+}
+.f-as-s {
+  align-self: stretch;
+}
+
+// 一些常用的组合
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.f-1 {
+  flex: 1;
+}

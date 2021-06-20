@@ -1,0 +1,47 @@
+@import url('./vars.less');
+
+each(@h__size, {
+    @per: ~'@{value}%';
+    @vh: ~'@{value}vh';
+    .h-@{value} {
+        height: @per;
+    }
+    .h-@{vh} {
+        height: @vh;
+    }
+    .max-h-@{value} {
+        max-height: @per;
+    }
+    .max-h-@{vh} {
+        max-height: @vh;
+    }
+    .min-h-@{value} {
+        min-height: @per;
+    }
+    .min-h-@{vh} {
+        min-height: @vh;
+    }
+});
+
+each(@w__size, {
+    @per: ~'@{value}%';
+    @wh: ~'@{value}wh';
+    .w-@{value} {
+        width: @per;
+    }
+    .w-@{wh} {
+        width: @wh;
+    }
+    .max-w-@{value} {
+        max-width: @per;
+    }
+    .max-w-@{wh} {
+        max-width: @wh;
+    }
+    .min-w-@{value} {
+        max-width: @per;
+    }
+    .min-w-@{wh} {
+        max-width: @wh;
+    }
+});
