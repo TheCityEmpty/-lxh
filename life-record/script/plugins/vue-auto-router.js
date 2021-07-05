@@ -19,8 +19,7 @@ pagesDirs.forEach((dir) => {
   })
 })
 
-const lastRoutesFile = `
-/* eslint-disable prettier/prettier */
+const lastRoutesFile = `/* eslint-disable prettier/prettier */
 
 /**
  * @desc 自动生成文件，无需改动

@@ -9,5 +9,5 @@ export default defineConfig({
     alias: {
       '@': resolve(resolve(__dirname, 'src'))
     }
-  },
+  }
 })
