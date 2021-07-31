@@ -16,15 +16,15 @@
 <script>
   import { leftBarArr } from '@/common/config.js'
   import { useRoute } from 'vue-router'
-  import { reactive, ref, toRefs } from 'vue'
+  import { reactive, ref, toRefs, defineProps } from 'vue'
   export default {
-    props: {
-      search: {
-        type: Boolean,
-        default: true
-      }
-    },
     setup(props) {
+      defineProps({
+        search: {
+          type: Boolean,
+          default: true
+        }
+      })
       const { path } = useRoute()
       const currentPageUrl = /\/([\w-]+)\//.exec(path)
       let currentPageInfo = reactive(leftBarArr.find((item) => item.name === currentPageUrl[1]))

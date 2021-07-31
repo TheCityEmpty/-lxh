@@ -4,7 +4,7 @@ import path from 'path'
 
 export default defineConfig({
   build: {
-    outDir: 'root'
+    outDir: 'dist'
   },
   css: {
     modules: {
