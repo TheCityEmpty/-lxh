@@ -18,15 +18,12 @@
     "jest": "^27.0.6",
     "lint-staged": "^11.1.2"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "base-fn/src/**/*.(js|vue)": [
-      "eslint"
+    "*.{vue,json,jsx,js,tsx,ts,md,mdx,css,less,pcss,sass,scss,styl,html}": [
+        "prettier --write"
     ],
-    "*.js": "eslint --cache --fix"
+    "*.{jsx,js,tsx,ts,vue}": [
+        "eslint --fix"
+    ]
   }
 }
