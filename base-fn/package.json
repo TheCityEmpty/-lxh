@@ -4,7 +4,8 @@
   "description": "bsae-fn",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "@babel/preset-env": "^7.14.8",
     "babel-jest": "^27.0.6",
     "eslint": "^7.31.0",
+    "husky": ">=6",
     "jest": "^27.0.6",
     "lint-staged": "^11.1.2",
     "yorkie": "^2.0.0"
@@ -23,6 +25,7 @@
   "lint-staged": {
     "base-fn/src/**/*.(js|vue)": [
       "eslint"
-    ]
+    ],
+    "*.js": "eslint --cache --fix"
   }
 }
