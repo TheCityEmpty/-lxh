@@ -10,7 +10,6 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-yarn.lock
 
 # Editor directories and files
 .idea
@@ -23,7 +22,3 @@ yarn.lock
 
 src/common/routers/routerConfig*
 src/common/routers/path-routerConfig*
-
-
-yarn.lock
-package-lock.json

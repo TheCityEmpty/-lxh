@@ -1,57 +1,65 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" :src="logo">
-    <span :class="css.b">1231231231231232</span>
-    <span :class="$style.vv">奥术大师多</span>
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <transition name="scale-slide">
+      <router-view class="wrap"></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import aCss from './assets/a.module.css'
-import logo from '@/assets/logo.png'
 export default {
   name: 'App',
-  components: {
-    // HelloWorld
+  beforeRouteEnter(to, from, next) {
+    console.log('cc')
+    console.log(to ,from)
+    // next(vm => {
+    //   console.log(vm)
+    // })
   },
-  data () {
-    return {
-      logo: ''
-    }
+   beforeRouteUpdate(to, from, next) {
+      console.log('a')
+    console.log(to ,from)
+    // 在当前路由改变，但是该组件被复用时调用
+    // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，
+    // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
+    // 可以访问组件实例 `this`
   },
-
-  computed: {
-    css: () => aCss
+  beforeRouteLeave (to, from, next) {
+      console.log('bb')
+    console.log(to ,from)
+    // 在当前路由改变，但是该组件被复用时调用
+    // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，
+    // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
+    // 可以访问组件实例 `this`
   },
-
-  created () {
-    console.log(import.meta.env, 1, aCss)
-    console.log(logo)
-    // console.log(package)
-    this.logo = logo
-  }
 }
 </script>
 
-<style module>
-.vv {
-  color: #f00;
-  font-size: 20px;
+<style lang="less"> 
+* {margin: 0;padding: 0;}
+html, body {
+  overflow: hidden;
+}
+#app, .wrap  {
+  width: 100%;
+  min-height: 100vh;
+}
+.scale-slide-enter-active,
+.scale-slide-leave-active{
+  position: absolute;
+  transition: all 0.85s ease;
+}
+.scale-slide-enter-active {
+  right: -100%;
+}
+.scale-slide-leave-active {
+  // transform: scale(1);    
+}
+.scale-slide-enter-to {
+  right: 0;
+}
+.scale-slide-leave-to {
+  // transform: scale(0.8);
 }
 </style>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-.ccc {
-  color: #f00;
-}
-</style>

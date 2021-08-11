@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import { createVuePlugin } from 'vite-plugin-vue2'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
 
 export default defineConfig({
@@ -20,6 +21,7 @@ export default defineConfig({
   },
   plugins: [
     createVuePlugin(),
+    vueJsx()
   ],
   server: {
     port: 3001
