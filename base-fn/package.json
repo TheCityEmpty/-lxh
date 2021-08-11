@@ -20,8 +20,8 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.(js|vue)": [
-      "eslint && echo ok"
+    "base-fn/src/**/*.(js|vue)": [
+      "eslint"
     ]
   }
 }

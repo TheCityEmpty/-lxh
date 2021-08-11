@@ -109,7 +109,6 @@ export function isLowVersionIOS() {
   }
   return isLowVersionIOSCache
 }
-console.log('cc')
 
 let isLowVersionAndroidCache = null
 export function isLowVersionAndroid() {
