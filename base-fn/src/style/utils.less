@@ -1,0 +1,71 @@
+/* border 1Px */
+.border-t {
+    .half-border(top);
+}
+
+.border-r {
+    .half-border(right);
+}
+
+.border-b {
+    .half-border(bottom);
+}
+
+.border-l {
+    .half-border(left);
+}
+
+.border-a {
+    .half-border(all);
+}
+
+.half-border(top, @border-color: #efeff0, @border-style: solid) {
+    &::after {
+        border-top-width: 1px !important;
+    }
+}
+
+.half-border(right, @border-color: #efeff0, @border-style: solid) {
+    &::after {
+        border-right-width: 1px !important;
+    }
+}
+
+.half-border(bottom, @border-color: #efeff0, @border-style: solid) {
+    &::after {
+        border-bottom-width: 1px !important;
+    }
+}
+
+.half-border(left, @border-color: #efeff0, @border-style: solid) {
+    &::after {
+        border-left-width: 1Px !important;
+    }
+}
+
+.half-border(all, @border-color: #efeff0, @border-style: solid, @border-radius: 0px, @bg-color: transparent) {
+    &::after {
+        border-width: 1px !important;
+    }
+}
+
+.half-border(@_, @border-color: #efeff0, @border-style: solid, @border-radius: 0px, @bg-color: transparent) {
+    position: relative;
+    z-index: 1;
+    &::after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        z-index: -1;
+        left: -50%;
+        top: -50%;
+        width: 200%;
+        height: 200%;
+        background-color: @bg-color;
+        transform: scale(0.5, 0.5);
+        border-radius: @border-radius * 2;
+        border-style: @border-style;
+        border-color: @border-color;
+        border-width: 0 0 0 0;
+    }
+}
