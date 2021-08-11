@@ -14,7 +14,8 @@
     "babel-jest": "^27.0.6",
     "eslint": "^7.31.0",
     "jest": "^27.0.6",
-    "lint-staged": "^11.1.2"
+    "lint-staged": "^11.1.2",
+    "yorkie": "^2.0.0"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
