@@ -21,7 +21,7 @@
   },
   "lint-staged": {
     "src/**/*.(js|vue)": [
-      "eslint"
+      "eslint && echo ok"
     ]
   }
 }
