@@ -39,28 +39,35 @@
     <div class="border">123123</div>
 
     <script>
-        function A (a) {
-            this.a = a
+
+// [1, 3, 4, 2, 7, 3, 11, 10];
+
+
+        let arr = [4, 2, 1, 6, 7, 3, 11, 10];
+        function sort(){
+            for (let i = 1; i < arr.length; i++) {
+                const temp = arr[i]
+                var b= false
+                for (var j = i-1; j > 0; j--) {
+                    if (temp < arr[j]) {
+                        arr[j+1] = arr[j]
+                    }else{
+                         b= true
+                        break;
+                    }
+                }
+                if(b){
+                    arr[j+1] = temp
+                }else{
+                    arr[j] = temp
+                }
+                
+            }
+
+            console.log(arr);
         }
-        A.prototype.getA = function () {
-            return this.a
-        }
+        sort()
 
-        const a = new A('asdas')
-        console.log(a, a instanceof A)
-
-
-        function myNew () {
-            const fun = [].shift.call(arguments)
-            const newObj = Object.create(fun.prototype)
-            const params = arguments
-            const resFun = fun.apply(newObj, params)
-
-            return typeof resFun === 'object' ? resFun : newObj
-        }
-        
-        const newa = myNew(A, '123123')
-        console.log(newa, newa instanceof A)
     </script>
 </body>
 </html>

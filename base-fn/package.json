@@ -19,9 +19,6 @@
     "lint-staged": "^11.1.2"
   },
   "lint-staged": {
-    "*.{vue,json,jsx,js,tsx,ts,md,mdx,css,less,pcss,sass,scss,styl,html}": [
-        "prettier --write"
-    ],
     "*.{jsx,js,tsx,ts,vue}": [
         "eslint --fix"
     ]

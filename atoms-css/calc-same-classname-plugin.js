@@ -12,7 +12,7 @@ class CalcSameClassNamePlugin {
                     if (sameClassNameArr.length) {
                         warning = ` \n${filename}文件下重复类名如下：\n${sameClassNameArr.join('\n')}
                         `
-                        throw new Error(warning.red)
+                        console.error(warning.red)
                     }
                 }
             })
